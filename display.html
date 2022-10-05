@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display grid</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: minmax(max-content, 300px) minmax(200px, 1fr) 150px;
+            grid-gap: 5px;
+            box-sizing: border-box;
+            height: 200px;
+            width: 100%;
+            background-color: orange;
+            padding: 10px;            
+        }
+
+        #container > div {
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div>            
+    Elemento tan ancho como e contenido,<br/>
+    pero de máximo 300 píxeles.<br/>
+    minmax(max-content, 300px)
+   </div>
+   <div>
+    Elemento con un ancho flexible, pero con un mínimo de 200 píxeles.
+    minmax(200px, 1fr)
+   </div>
+   <div>
+    Elemento inflexible de 150 píxeles de ancho.
+   </div>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>grid-template-areas</title>
+	<style>
+		body{
+			margin: 40px;
+		}
+		.lateralIzquierdo{
+			grid-area: lateralIzquierdo;
+		}
+		.lateralDerecho{
+			grid-area: lateralDerecho;
+		}
+		.contenido{
+			grid-area: contenido;
+		}
+		.encabezado{
+			grid-area: encabezado;
+		}
+		.piePagina{
+			grid-area: piePagina;
+		}
+		.contenedor{
+			display:  grid;
+			grid-gap: 1em;
+			text-align: center;
+			grid-template-areas: 
+								"encabezado"
+								"lateralIzquierdo"
+								"contenido"
+								"lateralDerecho"
+								"piePagina";
+		}
+		.caja{
+			background-color: #444;
+			color:  white;
+			border-radius: 5px;
+			padding:  10px;
+			font-size: 150%;
+		}
+		.encabezado{
+			background-color: #999;
+		}
+		@media only screen and (min-width: 500px){
+			.contenedor{
+				grid-template-columns: 20% auto;
+				grid-template-areas:
+									"encabezado encabezado"
+									"lateralIzquierdo contenido"
+									"lateralDerecho lateralDerecho"
+									"piePagina piePagina";
+			}
+		}
+		@media only screen and (min-width: 600px){
+			.contenedor{
+				grid-gap: 20px;
+				grid-template-columns: 120px auto 120px;
+				grid-template-areas:
+									"encabezado encabezado encabezado"
+									"lateralIzquierdo contenido lateralDerecho"
+									"piePagina piePagina piePagina";
+				max-width: 600px;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="caja encabezado">Encabezado</div>
+		<div class="caja lateralIzquierdo">Izquierdo</div>
+		<div class="caja lateralDerecho">Derecho</div>
+		<div class="caja contenido">Contenido</div>
+		<div class="caja piePagina">Pie página</div>
+	</div>
+</body>
+</html>
